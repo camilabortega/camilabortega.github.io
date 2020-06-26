@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        background: url("../notebook.png") no-repeat top;
+        background-size: contain;
+    }
+}
+
+.notebook {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 30px auto;
+    width: 100%;
+    max-width: 600px;
+}
+@media screen and (min-width: 601px) {
+    .notebook {
+        height: 800px;
+        background: url("../notebook.png") no-repeat top;
+        background-size: cover;
+    }
+}
+
+.notebook .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    margin: 100px 40px 0;
+}
+@media screen and (max-width: 600px) {
+    .notebook .header {
+        margin-top: 35px;
+    }
+}
+
+.notebook .header h1 {
+    width: 80%;
+    text-align: center;
+    color: #0095f6;
+    font-family: 'Gochi Hand', cursive;
+}
+
+
+.notebook ul#todos {
+    margin: 30px;
+    height: 600px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+    @media screen and (max-width: 600px) {
+        .notebook ul#todos {
+            margin: 0 30px;
+            height: 60vh;
+        }
+    }
+
+.notebook ul#todos li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    margin-bottom: 10px;
+    color: #494545;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 20px;
+}
+
+.notebook ul#todos li button {
+    border: none;
+    background: transparent;
+    padding: 4px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.notebook ul#todos li button:before {
+    content: "\f00c";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    font-size: 16px;
+    color: #0095f6;
+}
+
+.notebook .footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+    margin-bottom: 40px;
+}
+@media screen and (max-width: 600px) {
+    .notebook .footer {
+        position: absolute;
+        bottom: 0;
+        padding: 20px 0;
+        margin: 0;
+        width: 100%;
+    }
+}
+
+.notebook .footer input#new-todo,
+.notebook .footer input#new-todo:focus {
+    border: none;
+    border-bottom: 1px solid #DBDBDB;
+    padding: 5px 0;
+    outline: none;
+}
+
+.btn-default {
+    padding: 4px;
+    margin-left: 10px;
+    border: none;
+    background: transparent;
+    color: #494545;
+    font-weight: bold;
+}
+
+.done{
+    text-decoration: line-through;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ccc;
+}
