@@ -1,0 +1,466 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h2, a, p, h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.loading {
+    position: absolute;
+    z-index: 2;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.loading img {
+    width: 50px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 990px;
+    margin: auto;
+}
+
+.container.align-top {
+    align-items: flex-start;
+}
+
+.border {
+    border-radius: 14px;
+    background-color: rgb(245, 248, 250);
+}
+
+.follow {
+    padding: 5px 15px;
+    border: 1px solid rgb(29, 161, 242);
+    border-radius: 40px;
+    color: rgb(29, 161, 242);
+    font-weight: bold;
+}
+
+/*HEADER*/
+
+header {
+    border-bottom: 1px solid rgb(204, 214, 221);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: white;
+}
+
+header .container {
+    height: 54px;
+}
+
+@media screen and (max-width: 999px) {
+    header .logo {
+        margin-left: 16px;
+    }
+}
+
+header .search {
+    display: flex;
+    align-items: center;
+    background: #e6ecf0;
+    border-radius: 50px;
+    flex-grow: .5;
+}
+
+@media screen and (max-width: 320px) {
+    header .search {
+        flex-grow: unset;
+        width: 200px;
+    }
+}
+
+header .search.active {
+    background-color: white;
+    border: 1px solid #1DA1F2;
+}
+
+header .search img {
+    width: 15px;
+    height: 15px;
+    margin: 0 20px;
+}
+@media screen and (max-width: 580px) {
+    header .search img {
+        margin: 0 0 0 20px;
+    }
+}
+
+header .search input#search {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+}
+
+header .search input#search:focus {
+    border: 0;
+    outline: 0;
+}
+
+header .settings {
+    width: 38px;
+    height: 38px;
+    border-radius: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .settings:hover {
+    background-color: rgb(232, 245, 254);
+}
+
+@media screen and (max-width: 999px) {
+    header .settings {
+        margin-right: 16px;
+    }
+}
+
+/*HEADER*/
+
+/*FEED*/
+
+.feed {
+  border-left: 1px solid rgb(204, 214, 221);
+  border-right: 1px solid rgb(204, 214, 221);
+  max-width: 600px; 
+}
+@media screen and (max-width: 999px) {
+    .feed {
+        max-width: 100%;
+    }
+}
+
+.feed .cover {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center center;
+}
+@media screen and (max-width: 580px) {
+    .feed .cover {
+        height: 130px;
+    }
+}
+
+.feed .profile {
+    border-radius: 134px;
+    border: 4px solid white;
+    position: relative;
+    display: block;
+    margin-left: 10px;
+    margin-top: -80px;
+    width: 134px;
+}
+@media screen and (max-width: 580px) {
+    .feed .profile {
+        width: 68px;
+        margin-top: -10px;
+    }
+}
+
+.feed .bio {
+    display: block;
+    margin-top: -65px;
+    padding: 10px 15px 15px;
+}
+
+.feed .bio .follow-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.feed .bio .follow-btn .follow{
+    padding: 10px 15px;
+}
+
+.feed .bio h3 {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.feed .bio h3 img {
+    margin-left: 5px;
+}
+
+.feed .bio .account {
+    color: #657786;
+    font-size: 15px;
+}
+
+.feed .bio .description {
+    margin: 10px 0;
+}
+
+.feed .bio .info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+@media screen and (max-width: 580px) {
+    .feed .bio .info {
+        flex-direction: column;
+        align-items: unset;
+    }
+}
+
+.feed .bio .info p, 
+.feed .bio .joined {
+    margin-right: 10px;
+    color: #657786;
+    font-size: 15px;
+}
+
+.feed .bio .followers {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.feed .bio .followers p:first-child {
+    margin-right: 20px;
+}
+
+.feed .menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(204, 214, 221);
+}
+
+.feed .menu a {
+    text-align: center;
+    flex-grow: 1;
+    padding: 15px 0;
+    color: #657786;
+}
+
+.feed .menu a.active {
+    color: rgb(29, 161, 242);
+}
+
+.feed .menu a.active::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: rgb(29, 161, 242);
+    display: block;
+    position: relative;
+    top: 15px;
+}
+
+.feed .menu a:hover {
+    background-color: rgb(232, 245, 254);
+    color: rgb(29, 161, 242);
+}
+
+.feed .tweets .tweet {
+    border-bottom: 1px solid rgb(204, 214, 221);
+}
+
+.feed .tweets .tweet .body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px 0;
+}
+
+.feed .tweets .tweet .body .avatar {
+    margin-right: 10px;
+}
+
+.feed .tweets .tweet .body .avatar img {
+    border-radius: 50px;
+    width: 50px;
+}
+
+.feed .tweets .tweet .body .content .tweet-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 999px) {
+    .feed .tweets .tweet .body .content {
+        flex-grow: 1;
+    }
+}
+
+.feed .tweets .tweet .body .content .tweet-header p {
+    font-size: 15px;
+    color: #657786;
+}
+
+.feed .tweets .tweet .body .content .tweet-header p a {
+    color: black;
+}
+.feed .tweets .tweet .body .content .tweet-header p a:hover {
+    text-decoration: underline;
+}
+
+.feed .tweets .tweet .body .content .tweet-header p img {
+    margin-right: 5px;
+}
+
+.feed .tweets .tweet .body .content .tweet-text a {
+    color: rgb(29, 161, 242);
+}
+.feed .tweets .tweet .body .content .tweet-text a:hover {
+    text-decoration: underline;
+}
+
+.feed .tweets .tweet .body .content .all-media {
+    width: 100%;
+    height: 285px;
+    overflow: hidden;
+    border-radius: 20px;
+    display: flex;
+}
+
+.feed .tweets .tweet .body .content .media {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    border-radius: 20px;
+    background-position: center center;
+    background-size: cover;
+}
+
+.feed .tweets .tweet .body .content .reactions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 425px;
+    margin: 10px 0;
+}
+
+/*FEED*/
+
+/*MORE*/
+
+.more {
+    width: 350px;
+    position: sticky;
+    top: 55px;
+}
+@media screen and (max-width: 999px) {
+    .more{
+        display: none;
+    }
+}
+
+.more .media {
+    margin-top: 10px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.more .suggestions {
+    margin-top: 10px;
+}
+
+.more .suggestions h2 {
+    padding: 10px 15px;
+}
+
+.more .suggestions .profile {
+    border-top: 1px solid rgb(230, 236, 240);
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.more .suggestions .profile .avatar {
+    border-radius: 50px;
+}
+
+.more .suggestions .profile .user {
+    flex-grow: 1;
+}
+
+.more .suggestions .profile .user a {
+    display: block;
+    margin-left: 10px;
+}
+
+.more .suggestions .profile .user .fullname {
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.more .suggestions .profile .user .fullname img {
+    margin-left: 5px;
+}
+
+.more .suggestions .profile .user .account {
+    color: #657786;
+    font-size: 15px;
+}
+
+.more .suggestions .show-more {
+    display: block;
+    padding: 10px 15px;
+    border-top: 1px solid rgb(230, 236, 240);
+    color: rgb(29, 161, 242);
+}
+
+.more .links {
+    margin-top: 20px;
+}
+
+.more .links a {
+    font-size: 13px;
+    color: #657786;
+    padding-right: 10px;
+}
+
+.more .links a:hover {
+    text-decoration: underline;
+}
+
+.more .copyright p {
+    color: #657786;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/*MORE*/
