@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+}
+
+button:focus {
+    border: none;
+    outline: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.modal .modal-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.50);
+    z-index: 1;
+}
+
+.modal .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    max-width: 250px;
+    padding: 20px 0;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.modal .modal-body input {
+    border: none;
+    border-bottom: 1px solid teal;
+}
+
+.modal .modal-body input::-webkit-input-placeholder {
+    font-family: "Homemade Apple", cursive;
+}
+
+.modal .modal-body input#number {
+    margin: 20px 0;
+}
+
+.modal .modal-body button {
+    width: 50px;
+    height: 25px;
+    border-radius: 4px;
+    border: none;
+    background-color: teal;
+    color: white;
+    font-family: "Homemade Apple", cursive;
+}
+
+.modal .modal-body button:hover {
+    border: 1px solid teal;
+    background-color: white;
+    color: teal;
+    cursor: pointer;
+}
+
+.list {
+    max-width: 500px;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.list h1, .list h3 {
+    text-align: center;
+}
+
+.list h1 {
+    font-family: "Homemade Apple", cursive;
+    color: teal;
+}
+
+.list h3 {
+    font-family: "Homemade Apple", cursive;
+    color: rgba(67, 70, 69, 0.678);
+}
+
+.list ul {
+    margin: 10px 16px 0;
+}
+
+.list ul li {
+    padding: 5px 10px;
+    font-family: "Homemade Apple", cursive;
+    color: rgba(67, 70, 69, 0.678);
+    list-style: none;
+}
+
+.list ul li strong {
+    display: block;
+    color: teal;
+    line-height: 10px;
+}
+
+.list .open-modal {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: sticky;
+    bottom: 10px;
+}
+
+.list .open-modal button {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    border: none;
+    background-color: teal;
+    color: white;
+    font-size: 20px;
+    margin-right: 16px;
+}
+
+.list .open-modal button:hover {
+    border: 1px solid teal;
+    background-color: white;
+    color: teal;
+    cursor: pointer;
+}
